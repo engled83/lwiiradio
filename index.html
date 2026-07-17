@@ -3,9 +3,27 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>LWII Radio | Look Who It Is Radio | Independent Rock & Country</title>
-<meta name="description" content="LWII Radio, also known as Look Who It Is Radio, is a licensed independent rock and country streaming station built to spotlight real artists, mix in familiar songs, and help listeners discover music worth hearing.">
+<title>Look Who It Is Radio | Independent Rock & Country</title>
+<meta name="description" content="Listen to Look Who It Is Radio, a licensed independent rock and country station featuring familiar songs and independent artists worth hearing.">
+<meta name="robots" content="index, follow, max-image-preview:large">
+<meta name="theme-color" content="#050509">
+
 <link rel="canonical" href="https://lwiiradio.com/">
+<link rel="icon" type="image/png" href="/radiologo.png">
+
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Look Who It Is Radio">
+<meta property="og:title" content="Look Who It Is Radio | Independent Rock & Country">
+<meta property="og:description" content="Listen to a licensed independent rock and country station featuring familiar songs and independent artists worth hearing.">
+<meta property="og:url" content="https://lwiiradio.com/">
+<meta property="og:image" content="https://lwiiradio.com/radiologo.png">
+<meta property="og:image:alt" content="Look Who It Is Radio logo">
+
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Look Who It Is Radio | Independent Rock & Country">
+<meta name="twitter:description" content="Listen to a licensed independent rock and country station featuring familiar songs and independent artists worth hearing.">
+<meta name="twitter:image" content="https://lwiiradio.com/radiologo.png">
+
 <!-- Google tag (gtag.js) -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-YB353EMH0Z"></script>
 <script>
@@ -19,33 +37,54 @@
   <script type="application/ld+json">
 {
   "@context": "https://schema.org",
-  "@type": "RadioStation",
-  "@id": "https://lwiiradio.com/#radiostation",
-  "name": "Look Who It Is Radio",
-  "alternateName": "LWII Radio",
-  "url": "https://lwiiradio.com/",
-  "logo": "https://lwiiradio.com/radiologo.png",
-  "image": "https://lwiiradio.com/radiologo.png",
-  "description": "Look Who It Is Radio is a licensed independent rock and country streaming station built to spotlight real artists, mix in familiar songs, and help listeners discover music worth hearing.",
-  "slogan": "Country by day. Rock at night.",
-  "genre": [
-    "Independent Rock",
-    "Country",
-    "Americana",
-    "Roots",
-    "Alternative Rock",
-    "Red Dirt",
-    "Singer-Songwriter"
-  ],
-  "sameAs": [
-    "https://www.instagram.com/lookwhoitispod/",
-    "https://www.tiktok.com/@lookwhoitispod"
-  ],
-  "parentOrganization": {
-    "@type": "Organization",
-    "name": "Windrow Studio",
-    "url": "https://windrowstudio.com/"
-  }
+  "@graph": [
+    {
+      "@type": "RadioStation",
+      "@id": "https://lwiiradio.com/#radiostation",
+      "name": "Look Who It Is Radio",
+      "alternateName": "LWII Radio",
+      "url": "https://lwiiradio.com/",
+      "logo": {
+        "@type": "ImageObject",
+        "url": "https://lwiiradio.com/radiologo.png"
+      },
+      "image": "https://lwiiradio.com/radiologo.png",
+      "description": "Look Who It Is Radio is a licensed independent rock and country streaming station built to spotlight real artists, mix in familiar songs, and help listeners discover music worth hearing.",
+      "slogan": "Country by day. Rock at night.",
+      "genre": [
+        "Independent Rock",
+        "Country",
+        "Americana",
+        "Roots",
+        "Alternative Rock",
+        "Red Dirt",
+        "Singer-Songwriter"
+      ],
+      "sameAs": [
+        "https://www.instagram.com/lookwhoitispod/",
+        "https://www.tiktok.com/@lookwhoitispod"
+      ],
+      "parentOrganization": {
+        "@type": "Organization",
+        "name": "Windrow Studio",
+        "url": "https://windrowstudio.com/"
+      }
+    },
+    {
+      "@type": "WebSite",
+      "@id": "https://lwiiradio.com/#website",
+      "url": "https://lwiiradio.com/",
+      "name": "Look Who It Is Radio",
+      "alternateName": [
+        "LWII Radio",
+        "lwiiradio.com"
+      ],
+      "publisher": {
+        "@id": "https://lwiiradio.com/#radiostation"
+      },
+      "inLanguage": "en-US"
+    }
+  ]
 }
 </script>
 
@@ -300,6 +339,7 @@ h1{
 }
 
 .player-title{
+  margin:0;
   display:flex;
   justify-content:center;
   align-items:center;
@@ -798,7 +838,7 @@ iframe{
       <section class="hero">
         <div class="hero-copy">
           <div class="logo-wrap">
-            <img src="radiologo.png" alt="Look Who It Is Radio logo">
+            <img src="radiologo.png" alt="Look Who It Is Radio logo" decoding="async" fetchpriority="high">
           </div>
 
           <div class="kicker">
@@ -806,7 +846,7 @@ iframe{
             <span>Licensed independent streaming radio</span>
           </div>
 
-          <h1>Independent Rock &amp; Country</h1>
+          <h1>Independent Rock &amp; Country Radio</h1>
 
           <p class="station-promise">
             LWII Radio, also known as Look Who It Is Radio, is a licensed independent rock and country station built to spotlight real artists, mix in familiar songs, and help listeners discover music worth hearing.
@@ -825,10 +865,10 @@ iframe{
 
         <section id="player" class="player-card" aria-label="Live radio player">
           <div class="player-head">
-            <div class="player-title">
+            <h2 class="player-title">
               <span class="live-dot" aria-hidden="true"></span>
               <span>Live Player</span>
-            </div>
+            </h2>
             <div class="player-note">Streaming on Live365</div>
           </div>
 
