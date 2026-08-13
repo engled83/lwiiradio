@@ -226,11 +226,11 @@
     .archive-list {
       display: grid;
       gap: 20px;
+      max-width: 960px;
+      margin: 0 auto;
     }
 
     .feature-card {
-      display: grid;
-      grid-template-columns: minmax(300px,.95fr) minmax(0,1.05fr);
       overflow: hidden;
       background:
         linear-gradient(135deg, rgba(155,44,255,.10), transparent 34%),
@@ -242,24 +242,39 @@
 
     .feature-image {
       display: block;
-      min-height: 100%;
+      position: relative;
       background: #07050b;
+      border-bottom: 1px solid var(--line);
     }
 
     .feature-image img {
       display: block;
       width: 100%;
-      height: 100%;
-      min-height: 335px;
-      object-fit: cover;
+      height: auto;
+      aspect-ratio: 1200 / 630;
+      object-fit: contain;
+      transition: transform .25s ease, filter .25s ease;
+    }
+
+    .feature-image:hover img {
+      filter: brightness(1.06);
+      transform: scale(1.008);
     }
 
     .feature-copy {
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      align-items: flex-start;
-      padding: clamp(25px,4vw,44px);
+      display: grid;
+      grid-template-columns: minmax(240px,.85fr) minmax(0,1.15fr);
+      gap: 20px 38px;
+      align-items: start;
+      padding: clamp(24px,4vw,38px);
+    }
+
+    .feature-heading {
+      min-width: 0;
+    }
+
+    .feature-details {
+      min-width: 0;
     }
 
     .date {
@@ -273,13 +288,13 @@
 
     .feature-copy h2 {
       margin: 0;
-      font-size: clamp(1.8rem, 4vw, 2.75rem);
+      font-size: clamp(1.75rem, 3.4vw, 2.55rem);
       line-height: 1.05;
       letter-spacing: -.035em;
     }
 
-    .feature-copy > p:not(.date) {
-      margin: 16px 0;
+    .feature-details > p {
+      margin: 0 0 17px;
       color: var(--soft);
       font-size: 1rem;
       line-height: 1.65;
@@ -388,8 +403,7 @@
     footer a { color: var(--muted); }
 
     @media (max-width: 760px) {
-      .feature-card { grid-template-columns: 1fr; }
-      .feature-image img { min-height: 0; aspect-ratio: 1200 / 630; }
+      .feature-copy { grid-template-columns: 1fr; gap: 18px; }
       .archive-heading { align-items: flex-start; flex-direction: column; gap: 6px; }
     }
 
@@ -406,6 +420,9 @@
       .nav a { min-height: 44px; padding: 0 8px; text-align: center; }
       .nav a:last-child { grid-column: 1 / -1; }
       .feature-copy { padding: 24px 18px; }
+      .feature-copy h2 { font-size: 1.8rem; }
+      .feature-details > p { font-size: .95rem; }
+      .feature-details .button { width: 100%; }
       .station-cta { padding: 24px 17px; }
       .actions a { width: 100%; }
     }
@@ -445,19 +462,24 @@
           </a>
 
           <div class="feature-copy">
-            <p class="date"><time datetime="2026-08-12">August 2026</time> · Five additions</p>
-            <h2>Five Independent Songs Worth Hearing</h2>
-            <p>
-              Alternative country and story-driven songwriting meet blues-rooted alternative rock and cinematic heaviness in LWII Radio’s first monthly new-music feature.
-            </p>
-            <ul class="artist-tags" aria-label="Artists featured in August 2026">
-              <li>Pressley Laton</li>
-              <li>Hailey Verhaalen</li>
-              <li>Cael Oak</li>
-              <li>Refuza</li>
-              <li>The Theos Variant</li>
-            </ul>
-            <a class="button" href="/new-music-august-2026.html">Read the August Feature</a>
+            <div class="feature-heading">
+              <p class="date"><time datetime="2026-08-12">August 2026</time> · Five additions</p>
+              <h2>Five Independent Songs Worth Hearing</h2>
+            </div>
+
+            <div class="feature-details">
+              <p>
+                Alternative country and story-driven songwriting meet blues-rooted alternative rock and cinematic heaviness in LWII Radio’s first monthly new-music feature.
+              </p>
+              <ul class="artist-tags" aria-label="Artists featured in August 2026">
+                <li>Pressley Laton</li>
+                <li>Hailey Verhaalen</li>
+                <li>Cael Oak</li>
+                <li>Refuza</li>
+                <li>The Theos Variant</li>
+              </ul>
+              <a class="button" href="/new-music-august-2026.html">Read the August Feature</a>
+            </div>
           </div>
         </article>
       </div>
