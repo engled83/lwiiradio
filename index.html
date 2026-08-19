@@ -6,7 +6,7 @@
 
 <title>Look Who It Is Radio | Thank You for Listening</title>
 
-<meta name="description" content="Look Who It Is Radio will be going off air for now after September 7, 2026. Thank you to everyone who listened, shared the station, and supported independent artists.">
+<meta name="description" content="Look Who It Is Radio will be going off air for now after September 7, 2026. Thank you to everyone who listened and supported independent music.">
 
 <meta name="robots" content="index, follow, max-image-preview:large">
 <meta name="theme-color" content="#050509">
@@ -26,7 +26,7 @@
 <meta name="twitter:description" content="Look Who It Is Radio will be going off air for now after September 7, 2026. Thank you for listening and supporting independent music.">
 <meta name="twitter:image" content="https://lwiiradio.com/lwiiradio-social.jpg">
 
-<!-- Google tag -->
+<!-- Google Analytics -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-YB353EMH0Z"></script>
 <script>
   window.dataLayer = window.dataLayer || [];
@@ -120,7 +120,7 @@ button:focus-visible{
 
 .container{
   width:100%;
-  max-width:1000px;
+  max-width:900px;
   margin:0 auto;
 }
 
@@ -240,53 +240,48 @@ h1{
   font-weight:850;
 }
 
-/* PLAYER */
+/* LISTEN CARD */
 
-.player-section{
+.listen-section{
   margin-top:40px;
 }
 
-.player-card{
+.listen-card{
   position:relative;
   overflow:hidden;
-  max-width:620px;
+  max-width:640px;
   margin:0 auto;
-  padding:22px;
+  padding:34px 28px;
   border-radius:30px;
+  text-align:center;
   background:
-    linear-gradient(135deg,rgba(155,44,255,.12),transparent 35%),
+    linear-gradient(135deg,rgba(155,44,255,.14),transparent 38%),
     rgba(17,16,24,.92);
   border:1px solid var(--line);
   box-shadow:var(--shadow);
 }
 
-.player-card:before{
+.listen-card:before{
   content:"";
   position:absolute;
   inset:0;
   background:
-    radial-gradient(480px 220px at 50% 0%,rgba(224,123,255,.15),transparent 70%),
+    radial-gradient(480px 220px at 50% 0%,rgba(224,123,255,.16),transparent 70%),
     linear-gradient(180deg,rgba(255,255,255,.035),transparent 45%);
   pointer-events:none;
 }
 
-.player-head,
-.player-frame{
+.listen-inner{
   position:relative;
 }
 
-.player-head{
-  text-align:center;
-  margin-bottom:16px;
-}
-
-.player-title{
-  margin:0;
+.listen-icon{
   display:flex;
   justify-content:center;
   align-items:center;
   gap:10px;
-  font-size:18px;
+  margin-bottom:14px;
+  font-size:17px;
   font-weight:850;
 }
 
@@ -298,36 +293,27 @@ h1{
   box-shadow:0 0 0 6px rgba(224,123,255,.13);
 }
 
-.player-note{
-  margin-top:7px;
+.listen-card h2{
+  margin:0;
+  font-size:clamp(25px,4vw,34px);
+  letter-spacing:-1px;
+}
+
+.listen-card p{
+  max-width:500px;
+  margin:14px auto 22px;
   color:var(--muted);
-  font-size:13px;
+  font-size:15px;
+  line-height:1.65;
 }
 
-.player-frame{
-  display:flex;
-  justify-content:center;
-  align-items:center;
-  padding:12px;
-  border-radius:22px;
-  background:#0b0711;
-  border:1px solid var(--line2);
-}
-
-iframe{
-  display:block;
-  width:100%;
-  max-width:450px;
-  border:0;
-}
-
-/* POST-SHUTDOWN */
+/* OFFLINE MESSAGE */
 
 .offline-message{
   display:none;
-  max-width:620px;
+  max-width:640px;
   margin:40px auto 0;
-  padding:28px;
+  padding:30px;
   border-radius:28px;
   text-align:center;
   background:rgba(17,16,24,.9);
@@ -346,10 +332,10 @@ iframe{
   line-height:1.65;
 }
 
-/* LINKS */
+/* CONTINUE */
 
 .continue-section{
-  margin-top:52px;
+  margin-top:54px;
   text-align:center;
 }
 
@@ -378,8 +364,8 @@ iframe{
   display:inline-flex;
   align-items:center;
   justify-content:center;
-  min-height:48px;
-  padding:0 20px;
+  min-height:50px;
+  padding:0 22px;
   border-radius:999px;
   text-decoration:none;
   font-size:14px;
@@ -448,13 +434,9 @@ iframe{
     font-size:17px;
   }
 
-  .player-card{
-    padding:16px;
+  .listen-card{
+    padding:26px 18px;
     border-radius:24px;
-  }
-
-  iframe{
-    min-height:300px;
   }
 
   .button{
@@ -473,7 +455,7 @@ iframe{
 
     <header class="topbar">
       <nav class="nav" aria-label="Main navigation">
-        <a href="#player-section">Listen</a>
+        <a href="#listen">Listen</a>
         <a href="https://windrowstudio.com/lookwhoitis.html">Podcast</a>
         <a href="https://windrowstudio.com/">Windrow Studio</a>
       </nav>
@@ -493,7 +475,7 @@ iframe{
 
       <div class="status">
         <span class="status-dot" aria-hidden="true"></span>
-        <span id="status-text">Streaming through September 7</span>
+        <span id="status-text">Still streaming on Live365</span>
       </div>
 
       <h1>Thank You for Listening</h1>
@@ -508,41 +490,39 @@ iframe{
       </p>
 
       <p class="air-date" id="air-date">
-        The stream will remain available below through September 7.
+        The station is still available on Live365 through September 7.
       </p>
 
     </section>
 
-    <!-- PLAYER REMAINS VISIBLE THROUGH SEPTEMBER 7 -->
+    <section class="listen-section" id="listen">
 
-    <section class="player-section" id="player-section">
+      <div class="listen-card" id="live-listen">
 
-      <div class="player-card" id="live-player">
+        <div class="listen-inner">
 
-        <div class="player-head">
-          <h2 class="player-title">
+          <div class="listen-icon">
             <span class="live-dot" aria-hidden="true"></span>
-            <span>Listen While We're Still On Air</span>
-          </h2>
-
-          <div class="player-note">
-            Streaming on Live365
+            <span>Still On Air</span>
           </div>
-        </div>
 
-        <div class="player-frame">
-          <iframe
-            width="450"
-            height="316"
-            src="https://live365.com/embeds/v1/player/a94664?s=md&m=dark&c=mp3"
-            allow="autoplay"
-            title="Look Who It Is Radio Live365 Player">
-          </iframe>
+          <h2>Listen on Live365</h2>
+
+          <p>
+            The embedded website player and mobile app are no longer available, but the station can still be heard directly through the Live365 website.
+          </p>
+
+          <a
+            class="button button-primary"
+            href="https://live365.com/station/Look-Who-It-Is--Radio-a94664"
+            target="_blank"
+            rel="noopener noreferrer">
+            Listen on Live365
+          </a>
+
         </div>
 
       </div>
-
-      <!-- THIS AUTOMATICALLY REPLACES THE PLAYER AFTER SEPTEMBER 7 -->
 
       <div class="offline-message" id="offline-message">
         <h2>The Station Is Currently Off Air</h2>
@@ -558,10 +538,11 @@ iframe{
       <h2>Look Who It Is Continues</h2>
 
       <p>
-        The radio stream may be going quiet for now, but you can still follow the Look Who It Is podcast and the other music-focused work at Windrow Studio.
+        The radio station may be going quiet for now, but the Look Who It Is podcast and the other music-focused work at Windrow Studio are continuing.
       </p>
 
       <div class="actions">
+
         <a
           class="button button-primary"
           href="https://windrowstudio.com/lookwhoitis.html">
@@ -573,6 +554,7 @@ iframe{
           href="https://windrowstudio.com/">
           Visit Windrow Studio
         </a>
+
       </div>
 
     </section>
@@ -590,22 +572,24 @@ iframe{
   document.getElementById("year").textContent = new Date().getFullYear();
 
   /*
-    Keep the player visible through September 7, 2026.
-    Beginning September 8, the page automatically hides the
-    Live365 player and displays the offline message.
+    Keep the Live365 listening link visible through
+    September 7, 2026.
+
+    Starting September 8, hide the listening link
+    and show the off-air message.
   */
 
-  const shutdownDate = new Date("2026-09-08T00:00:00");
+  const shutdownDate = new Date("2026-09-08T00:00:00-04:00");
 
   if (new Date() >= shutdownDate) {
 
-    const player = document.getElementById("live-player");
+    const liveListen = document.getElementById("live-listen");
     const offline = document.getElementById("offline-message");
     const status = document.getElementById("status-text");
     const airDate = document.getElementById("air-date");
 
-    if (player) {
-      player.style.display = "none";
+    if (liveListen) {
+      liveListen.style.display = "none";
     }
 
     if (offline) {
